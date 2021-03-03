@@ -11,5 +11,5 @@ $userName = 'root';
 $passWord = '';
 // khai báo biến databaseName
 $databaseName = 'traicay';
-$conn = mysqli_connect($hostName, $userName, $passWord , $databaseName) or die ('Không thể kết nối tới database');
+$conn = mysqli_connect($hostName, $userName, $passWord , $databaseName)
 ?>
