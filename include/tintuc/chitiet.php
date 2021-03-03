@@ -3,8 +3,8 @@
 	{
 		$matin=$_POST['matintuc'];
 		$strSQL="SELECT * FROM tin_tuc WHERE ma_tt={$matin}";
-		$tintucchitiet=mysql_query($strSQL,$ung);
-		$rowTINCHITIET=mysql_fetch_array($tintucchitiet);
+		$tintucchitiet=mysqli_query($conn,$strSQL);
+		$rowTINCHITIET=mysqli_fetch_array($tintucchitiet);
 	}
 ?>
 <div style="width:587px; margin-left:3px; margin-right:3px;">

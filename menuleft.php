@@ -49,7 +49,7 @@
 <div id="left">
     <h1>DANH MỤC</h1>
     <ul>
-		<?php while($row= mysqli_fetch_assoc($loaiqua)) { ?> 
+		<?php while($row= mysqli_fetch_array($loaiqua)) { ?> 
 		    <li><a href="#" onclick="loaiqua_onsubmit('<?php echo $row['ma_loai']; ?>')"><?php echo $row['ten_loai']; ?></a></li>
 		<?php } ?>
     </ul>
