@@ -4,7 +4,7 @@ define('DB_USER','root');
 define('DB_PASS' ,'');
 define('DB_NAME', 'traicay');
 //khai báo biến host
-$hostName = 'MYSQL5039.site4now.net';
+$hostName = 'mysql5039.site4now.net';
 // khai báo biến username
 $userName = 'a706a4_traicay';
 //khai báo biến password
