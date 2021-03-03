@@ -4,12 +4,13 @@ define('DB_USER','root');
 define('DB_PASS' ,'');
 define('DB_NAME', 'traicay');
 //khai báo biến host
-$hostName = 'localhost';
+$hostName = 'MYSQL5039.site4now.net';
 // khai báo biến username
-$userName = 'root';
+$userName = 'a706a4_traicay';
 //khai báo biến password
-$passWord = '';
+$passWord = '1q2w3e4r';
 // khai báo biến databaseName
 $databaseName = 'traicay';
 $conn = mysqli_connect($hostName, $userName, $passWord , $databaseName) or die ('Không thể kết nối tới database');
+//"Driver={MySQL ODBC 5.1 Driver};Server=MYSQL5039.site4now.net;Database=db_a706a4_traicay;Uid=a706a4_traicay;Password=YOUR_DB_PASSWORD"
 ?>
