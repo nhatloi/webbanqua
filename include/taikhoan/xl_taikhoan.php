@@ -44,14 +44,6 @@ function dangky_taikhoan()
 		
 	if(isset($_POST['gioitinh']))
 		$gioitinh=$_POST['gioitinh'];
-		//ma xac nhan
-		if(isset($_POST['code']));
-		{
-		$recode=$_POST['code'];
-		if($recode!=$_SESSION['maxacnhan'])
-		return "Bạn Nhập Sai Mã Xác Nhận Vui Lòng Nhập Lại! <br /> <strong><a href="."\"#\""."onclick="."\"dangky_onsubmit('dangky')"."\">"
-		."Bấm Vào Đây Để Nhập Lại Mã Xác Nhận</a></strong>";
-		}
 		//kiem tra ten dang nhap co bi trung hay khong
 		$strSQL="SELECT COUNT(*) FROM khach_hang WHERE ten_dn='{$tendangnhap}'";
 		$kiem_ten=mysqli_query($conn,$strSQL);

@@ -253,13 +253,6 @@
                              </td>
                             </tr>
                             <tr>
-                              <td align="center">
-							  	<img src="include/taikhoan/captcha.php" alt="captcha" /></td>
-                              <td align="center"> 
-							  Nhập Lại Mã Xác Nhận Bên Cạnh:&nbsp;&nbsp;<input type="text" name="code" value="" style="width:70px;" />
-							  </td>
-                            </tr>
-                            <tr>
                               <td colspan="2" align="center">
 							  <input name="goiham" type="hidden" value="dangkytaikhoan" />
 							  <input name="view" type="hidden" value="xltaikhoan" />
