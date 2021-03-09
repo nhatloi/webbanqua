@@ -130,7 +130,7 @@ function xoasanphamtronggio()
 }
  function thanhtoan()
 {	
-	global $ung;
+	global $conn;
 	$arrmasp=$_SESSION['arrmasp'];
 	$arrtensp=$_SESSION['arrtensp'];
 	$arrsoluong=$_SESSION['arrsoluong'];
@@ -149,7 +149,7 @@ function xoasanphamtronggio()
  	mysqli_query($conn,$strSQL);
 	
 	//Lay mahd 
-	$mahd=mysqli_insert_id($ung);
+	$mahd=mysqli_insert_id($conn);
 
 	//luu thong tin qua don chi tiet
 	for($i=0; $i<$n; $i++)

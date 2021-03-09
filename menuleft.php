@@ -1,7 +1,6 @@
 <?php
 
 	if ($loaiqua = mysqli_query($conn, "SELECT * FROM loai_qua")) {
-		
 	  }
 
 ?>
