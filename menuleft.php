@@ -1,7 +1,7 @@
 <?php
 
 	if ($loaiqua = mysqli_query($conn, "SELECT * FROM loai_qua")) {
-		echo "Returned rows are: " . mysqli_num_rows($loaiqua);
+		
 	  }
 
 ?>
