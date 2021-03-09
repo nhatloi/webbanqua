@@ -84,7 +84,7 @@
 		<tr>
 			<td>
 		<div class="menuleft">
-			<a href="#" onclick="timgia_onsubmit('<30000')">Dưới 30.000đ</a>
+			<a href="#" onclick="timgia_onsubmit('mot')">Dưới 30.000đ</a>
 			<a href="#" onclick="timgia_onsubmit('hai')">30.000đ - 50.000đ</a>
 			<a href="#" onclick="timgia_onsubmit('ba')">50.000đ - 75.000đ</a>
 			<a href="#" onclick="timgia_onsubmit('bon')">75.000đ - 100.000đ</a>
