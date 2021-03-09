@@ -14,7 +14,7 @@ function xoa_lienhe()
 		$malienhe=$_POST['malienhe'];
 		
 	$strSQL="DELETE FROM lien_he WHERE ma_lh={$malienhe}";
-	mysql_query($strSQL,$ung);
+	mysqli_query($conn,$strSQL);
 	return "Bạn Đã Xóa Thành Công Liên Hệ Này";
 }
 //in thong bao

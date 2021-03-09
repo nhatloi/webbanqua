@@ -2,8 +2,8 @@
 //phan trang
 $dieukien="";
 $strSQL="SELECT count(*) FROM lien_he {$dieukien}";
-	$lienhe=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($lienhe);
+	$lienhe=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($lienhe);
 	$sodong=$row[0];
 	
 	$kichthuoctrang=10;
@@ -25,7 +25,7 @@ $strSQL="SELECT count(*) FROM lien_he {$dieukien}";
 		}
 	
 	$strSQL="SELECT * FROM lien_he {$dieukien} ORDER BY ma_lh desc Limit {$dongbatdau},{$kichthuoctrang}";
-	$lien_he=mysql_query($strSQL,$ung);
+	$lien_he=mysqli_query($conn,$strSQL);
 ?>
 <table width="750" cellpadding="2" cellspacing="0" border="0" class="admintable" style="border-right:#E9E9E9 1px solid; border-top:#E9E9E9 1px solid;" align="right">
 	<tr>
@@ -46,7 +46,7 @@ $strSQL="SELECT count(*) FROM lien_he {$dieukien}";
 		</th>
 	</tr>
 	<?php $i=$dongbatdau; ?>
-		<?php while($row=mysql_fetch_array($lien_he)) { $i+=1; ?>
+		<?php while($row=mysqli_fetch_array($lien_he)) { $i+=1; ?>
 	<tr>
 	<?php 
 		//xu ly mau cho dong

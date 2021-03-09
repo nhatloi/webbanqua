@@ -3,8 +3,8 @@
 		$maloaiqua=$_POST['maloaiqua'];
 		
 	$strSQL="SELECT * FROM loai_qua WHERE ma_loai={$maloaiqua}";
-	$loaiqua=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($loaiqua);
+	$loaiqua=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($loaiqua);
 ?>
 <form action="" method="post" name="themloaiqua">
 <table cellpadding="0" cellspacing="0" border="0" align="center">

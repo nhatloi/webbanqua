@@ -13,56 +13,56 @@
 // ham xoa loai qua
 function xoa_loai_qua()
 {
-	global $ung;
+	global $conn;
 	if(isset($_POST['maloaiqua']))
 		$maloaiqua=$_POST['maloaiqua'];
 	//kiem tra xem loai qua co lien quan den 
 	$strSQL="SELECT COUNT(*) FROM qua WHERE ma_loai={$maloaiqua}";
-	$qua=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($qua);
+	$qua=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($qua);
 	
 	if($row[0]>0)
 		return "Không Thể Xóa Loại qua Đã Có Sản Phẩm";
 	//neu khong co qua lien quan thi co the xoa
 	$strSQL="DELETE FROM loai_qua WHERE ma_loai={$maloaiqua}";
-	mysql_query($strSQL,$ung);
+	mysqli_query($conn,$strSQL);
 	return "Xóa Thành Công Loại qua";
 }
 // ham them loai qua
 function them_loai_qua()
 {
-	global $ung;
+	global $conn;
 	if(isset($_POST['tenloaiqua']))
 		$tenloaiqua=$_POST['tenloaiqua'];
 	//kiem tra loai qua co trung ten voi loai qua da co hay ko
 		$strSQL="SELECT COUNT(*) FROM loai_qua WHERE ten_loai ='{$tenloaiqua}'";
-		$loaiqua=mysql_query($strSQL,$ung);
-		$row=mysql_fetch_array($loaiqua);
+		$loaiqua=mysqli_query($conn,$strSQL);
+		$row=mysqli_fetch_array($loaiqua);
 		if($row[0]>0)
 			return "Loại qua Này Đã Tồn Tại! Bạn Hãy Chon Tên Khác";
 	//neu khong trung ten luu vao csdl
 		$strSQL="INSERT INTO loai_qua(ten_loai) VALUES('{$tenloaiqua}')";
-		mysql_query($strSQL,$ung);
+		mysqli_query($conn,$strSQL);
 	return "Thêm Thành Công Loai qua: {$tenloaiqua} Vào Cơ Sở Dữ Liệu!";
 }
 // ham sua loai qua
 function sua_loai_qua()
 {	
-	global $ung;
+	global $conn;
 	if(isset($_POST['maloaiqua']))
 		$maloaiqua=$_POST['maloaiqua'];
 	if(isset($_POST['tenloaiqua']))
 		$tenloaiqua=$_POST['tenloaiqua'];
 	//kiem tra loai qua co trung ten voi loai qua da co hay ko
 		$strSQL="SELECT COUNT(*) FROM loai_qua WHERE ten_loai ='{$tenloaiqua}'";
-		$loaiqua=mysql_query($strSQL,$ung);
-		$row=mysql_fetch_array($loaiqua);
+		$loaiqua=mysqli_query($conn,$strSQL);
+		$row=mysqli_fetch_array($loaiqua);
 		if($row[0]>0)
 			return "Loại qua Này Đã Tồn Tại! Bạn Hãy Chon Tên Khác";
 	//neu khong trung ten luu vao csdl
 		
 		$strSQL="UPDATE loai_qua SET ten_loai='{$tenloaiqua}' WHERE ma_loai={$maloaiqua}";
-		mysql_query($strSQL,$ung);
+		mysqli_query($conn,$strSQL);
 		
 		return "Sửa Thành Công!";
 }

@@ -3,8 +3,8 @@
 	{
 		$matintuc=$_POST['matintuc'];
 		$strSQL="SELECT * FROM tin_tuc WHERE ma_tt={$matintuc}";
-		$tintuc=mysql_query($strSQL,$ung);
-		$rowTT=mysql_fetch_array($tintuc);
+		$tintuc=mysqli_query($conn,$strSQL);
+		$rowTT=mysqli_fetch_array($tintuc);
 	}
 ?>
 <table width="750" cellpadding="2" cellspacing="0" border="0" class="admintable" style="border-right:#E9E9E9 1px solid; border-top:#E9E9E9 1px solid;" align="right">

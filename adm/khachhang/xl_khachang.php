@@ -15,7 +15,7 @@ function xoa_khachhang()
 		$makhachhang=$_POST['makhachhang'];
 	
 	$strSQL="DELETE FROM khach_hang WHERE ma_kh={$makhachhang}";
-	mysql_query($strSQL,$ung);
+	mysqli_query($conn,$strSQL);
 	
 	return "Bạn Đã Xóa Thành Công Khách Hàng Này!";
 }

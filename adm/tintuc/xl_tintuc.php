@@ -14,20 +14,20 @@ if(isset($_POST['goihamxuly']))
 }
 //ham xoa tin tuc
 function xoa_tintuc()
-{	
-	global $ung;
+{
+	global $conn;
 	if(isset($_POST['matintuc']))
 		$matintuc=$_POST['matintuc'];
 	
 		$strSQL="DELETE FROM tin_tuc WHERE ma_tt ={$matintuc}";
-		mysql_query($strSQL,$ung);
-	return "B?n Ðã Xóa Thành Công Tin T?c Này!";
+		mysqli_query($conn,$strSQL);
+	return "B?n ï¿½ï¿½ Xï¿½a Thï¿½nh Cï¿½ng Tin T?c Nï¿½y!";
 }
 
 //ham them tin tuc
 function them_tin_tuc()
 {
-	global $ung;
+	global $conn;
 	if(isset($_POST['tieudetintuc']))
 		$tieudetintuc=$_POST['tieudetintuc'];
 		
@@ -38,14 +38,14 @@ function them_tin_tuc()
 		$noidungtintuc=$_POST['noidungtintuc'];
 	
 	$strSQL="INSERT INTO tin_tuc(tieu_de,hinh_anh,noi_dung) VALUES('{$tieudetintuc}','{$hinhanh}','{$noidungtintuc}')";
-	mysql_query($strSQL,$ung);
+	mysqli_query($conn,$strSQL);
 	
-	return "Ðã Thêm Thành Công Tin T?c Này";
+	return "ï¿½ï¿½ Thï¿½m Thï¿½nh Cï¿½ng Tin T?c Nï¿½y";
 }
 // ham sua tin tuc
 function sua_tintuc()
 {
-		global $ung;
+		global $conn;
 	if(isset($_POST['matt']))
 		$matt=$_POST['matt'];
 		
@@ -59,9 +59,9 @@ function sua_tintuc()
 		$noidungtintuc=$_POST['noidungtintuc'];
 	
 	$strSQL="UPDATE tin_tuc SET tieu_de='{$tieudetintuc}',hinh_anh='{$hinhanh}',noi_dung='{$noidungtintuc}' WHERE ma_tt={$matt}";	
-	mysql_query($strSQL,$ung);
+	mysqli_query($conn,$strSQL);
 	
-	return "B?n Ðã S?a Thành Công Tin T?c Này!";
+	return "B?n ï¿½ï¿½ S?a Thï¿½nh Cï¿½ng Tin T?c Nï¿½y!";
 		
 }
 //in thong bao
@@ -77,7 +77,7 @@ echo "<p class='pp'><center><span style='color:#FF9900;'>{$thongbao}</span>";
 echo "<br />";
 echo "<br />";
 ?>
-<center><a href="#" onclick="adm_chuyentrang('quanlytintuc')">B?m Vào Ðây Ð? V? Trang Qu?n Lý Tin T?c</a></center>
+<center><a href="#" onclick="adm_chuyentrang('quanlytintuc')">B?m Vï¿½o ï¿½ï¿½y ï¿½? V? Trang Qu?n Lï¿½ Tin T?c</a></center>
 <?php
 echo "</p>";
 echo "</td>";

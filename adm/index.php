@@ -24,13 +24,13 @@ else
 		$pass=$_POST['txtpass'];
 		
 		$strSQL="SELECT *  FROM adm WHERE ten_dn = '{$tendangnhap}' AND mat_khau = '{$pass}'";
-		$admin=mysql_query($strSQL,$ung);
+		$admin=mysqli_query($conn,$strSQL);
 		
 		//Kiem Tra Du Lieu-Neu Co Luu Vao SS-Neu Khong Bao Loi//
-		if(mysql_num_rows($admin)>0)
+		if(mysqli_num_rows($admin)>0)
 		{
 			//lay ten luu vao SS//
-			$row=mysql_fetch_array($admin);
+			$row=mysqli_fetch_array($admin);
 			$_SESSION['hovatenad']=$row['ho']." ".$row['ten'];
 			$_SESSION['phanquyen']=$row['ten_dn'];
 		}

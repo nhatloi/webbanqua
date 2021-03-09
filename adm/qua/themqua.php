@@ -1,6 +1,6 @@
 <?php 
 	$strSQL="SELECT * FROM loai_qua";
-	$loaiqua=mysql_query($strSQL,$ung);
+	$loaiqua=mysqli_query($conn,$strSQL);
 
 ?>
 <form action="" method="post" name="themqua">
@@ -15,7 +15,7 @@
         		<input name="tenqua" type="text" id="tenqua" maxlength="30" style="width:180px;" />
         	&nbsp;&nbsp;Loại Quả:
 				<select name="loaiqua">
-					<?php while($row=mysql_fetch_array($loaiqua)) { ?>
+					<?php while($row=mysqli_fetch_array($loaiqua)) { ?>
 					<option value="<?php echo $row['ma_loai']; ?>"><?php echo $row['ten_loai']; ?></option>
 					<?php } ?>
         		</select>

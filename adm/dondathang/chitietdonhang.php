@@ -3,13 +3,13 @@
 	{
 		$madon=$_POST['madh'];
 		$strSQL1="SELECT * FROM dondathang WHERE ma_dh={$madon}";
-		$dondathang=mysql_query($strSQL1,$ung);
-		$rowDH=mysql_fetch_array($dondathang);
+		$dondathang=mysqli_query($conn,$strSQL1);
+		$rowDH=mysqli_fetch_array($dondathang);
 			$ma_khach=$rowDH['ma_kh'];
 		//lay khach hang
 		$strSQL2="SELECT * FROM khach_hang WHERE ma_kh={$ma_khach}";
-		$khachhang=mysql_query($strSQL2,$ung);
-		$rowKH=mysql_fetch_array($khachhang);
+		$khachhang=mysqli_query($conn,$strSQL2);
+		$rowKH=mysqli_fetch_array($khachhang);
 	}
 ?>
 <table width="750" cellpadding="2" cellspacing="0" border="0" class="admintable" style="border-right:#E9E9E9 1px solid; border-top:#E9E9E9 1px solid;" align="right">
@@ -68,9 +68,9 @@
 		$tongtien=0;
 		//lay thong tin chi tiet 
 		$strSQL3="SELECT * FROM ct_dondathang WHERE ma_dh={$madon}";
-		$chi_tiet=mysql_query($strSQL3,$ung);
+		$chi_tiet=mysqli_query($conn,$strSQL3);
 		
-		while($rowCT=mysql_fetch_array($chi_tiet))
+		while($rowCT=mysqli_fetch_array($chi_tiet))
 		{
 		$i+=1;
 		?>
@@ -80,8 +80,8 @@
 				<?php
 					//lay ten qua thong qua ma qua
 					$strSQL4="SELECT * FROM qua WHERE ma_qua={$rowCT['ma_qua']}";
-					$qua=mysql_query($strSQL4,$ung);
-					$row4=mysql_fetch_array($qua);
+					$qua=mysqli_query($conn,$strSQL4);
+					$row4=mysqli_fetch_array($qua);
 					
 					echo $row4['ten_qua'];
 				?>
@@ -133,7 +133,7 @@
 			$madon=$_POST['madh'];
 			
 			$strSQL="UPDATE dondathang SET hien_trang={$hientrang} WHERE ma_dh={$madon}";
-			mysql_query($strSQL,$ung);
+			mysqli_query($conn,$strSQL);
 		}
 		?>
 		

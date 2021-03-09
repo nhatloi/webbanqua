@@ -13,26 +13,26 @@
 //ham xoa qua
 function xoa_qua()
 {
-	global $ung;
+	global $conn;
 		if(isset($_POST['maqua']))
 		$maqua=$_POST['maqua'];
 		
 		//kiem tra loai qua co ton tai trong chi tiet don dat hang nao khong
 		$strSQL="SELECT COUNT(*) FROM ct_dondathang WHERE ma_qua ='{$maqua}'";
-		$ctdathang=mysql_query($strSQL,$ung);
-		$row=mysql_fetch_array($ctdathang);
+		$ctdathang=mysqli_query($conn,$strSQL);
+		$row=mysqli_fetch_array($ctdathang);
 		if($row[0]>0)
 			return "Bạn Không Thể Xóa qua Đã Có Trong Chi Tiết Hóa Đơn!";
 		//neu khong co the xoa
 		$strSQL="DELETE FROM qua WHERE ma_qua={$maqua}";
-		mysql_query($strSQL,$ung);
+		mysqli_query($conn,$strSQL);
 		
 		return "Đã Xóa Thành Công";
 }		
 //ham them qua
 function them_qua()
 {
-	global $ung;
+	global $conn;
 		if(isset($_POST['tenqua']))
 			$tenqua=$_POST['tenqua'];
 			
@@ -51,25 +51,25 @@ function them_qua()
 		if(isset($_POST['trangthai']))
 			$trangthai=$_POST['trangthai'];
 			
-		//kiem tra xem ten qua co bi trung hay khong
+		//kiem tra xem ten qua co bi trconn hay khong
 		$strSQL="SELECT COUNT(*) FROM qua WHERE ten_qua='{$tenqua}'";
-		$qua=mysql_query($strSQL,$ung);
-		$row=mysql_fetch_array($qua);
+		$qua=mysqli_query($conn,$strSQL);
+		$row=mysqli_fetch_array($qua);
 		
 		if($row[0]>0)
 			return "Tên qua Đã Tồn Tại, Bạn Hãy Chọn Tên Khác";
-		//neu khong trung ten luu vao csdl
+		//neu khong trconn ten luu vao csdl
 		
 		$strSQL="INSERT INTO qua(ten_qua,ma_loai,gia,mo_ta,hinh_anh,trang_thai) 
 			VALUES ('{$tenqua}',{$loaiqua},'{$giaqua}','{$mota}','{$hinhanh}','{$trangthai}')";
-		mysql_query($strSQL,$ung);
+		mysqli_query($strSQL,$conn);
 			
 			return "Đã Thêm Thành Công qua Váo Cơ Sở Dữ Liệu";
 		
 }
 function sua_qua()
 {
-	global $ung;
+	global $conn;
 		if(isset($_POST['maqua']))
 			$maqua=$_POST['maqua'];
 			
@@ -91,18 +91,18 @@ function sua_qua()
 		if(isset($_POST['trangthai']))
 			$trangthai=$_POST['trangthai'];
 			
-		//kiem tra xem ten qua co bi trung hay khong
+		//kiem tra xem ten qua co bi trconn hay khong
 		//$strSQL="SELECT COUNT(*) FROM qua WHERE ten_qua='{$tenqua}'";
-		//$qua=mysql_query($strSQL,$ung);
+		//$qua=mysql_query($strSQL,$conn);
 		//$row=mysql_fetch_array($qua);
 		//if($row[0]>0)
 			//return "Tên qua Đã Tồn Tại, Bạn Hãy Chọn Tên Khác";
 		
-		//neu khong trung ten luu thong tin da thay  vao csdl
+		//neu khong trconn ten luu thong tin da thay  vao csdl
 		
 		$strSQL="UPDATE qua SET ten_qua='{$tenqua}',ma_loai={$loaiqua},gia='{$giaqua}',mo_ta='{$mota}',hinh_anh='{$hinhanh}',trang_thai='{$trangthai}'
 			WHERE ma_qua={$maqua}";
-		mysql_query($strSQL,$ung);
+		mysqli_query($conn,$strSQL);
 			
 			return "Đã Lưu Thành Công Thay Đỗi Của Bạn";
 		

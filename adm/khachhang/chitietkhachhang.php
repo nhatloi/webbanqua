@@ -3,8 +3,8 @@
 	{
 		$makhachhang=$_POST['makhachhang'];
 		$strSQL="SELECT * FROM khach_hang WHERE ma_kh={$makhachhang}";
-		$khachhang=mysql_query($strSQL,$ung);
-		$rowKH=mysql_fetch_array($khachhang);
+		$khachhang=mysqli_query($conn,$strSQL);
+		$rowKH=mysqli_fetch_array($khachhang);
 		
 		$gioi=$rowKH['gioi_tinh'];
 			if($gioi==2)

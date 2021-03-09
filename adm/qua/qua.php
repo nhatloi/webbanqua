@@ -4,7 +4,7 @@
 	$dieukien="";
 	$tukhoa="";
 	$strSQL="SELECT * FROM loai_qua";
-	$loaiqua=mysql_query($strSQL,$ung);
+	$loaiqua=mysqli_query($conn,$strSQL);
 	//kiem tra xem ten qua co duoc nhap vao hay khong
 	if(isset($_POST['txttukhoa']))
 		{
@@ -39,8 +39,8 @@
 
 //phan trang
 $strSQL="SELECT count(*) FROM qua {$dieukien}";
-	$qua=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($qua);
+	$qua=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($qua);
 	$sodong=$row[0];
 	
 	$kichthuoctrang=10;
@@ -62,7 +62,7 @@ $strSQL="SELECT count(*) FROM qua {$dieukien}";
 		}
 	
 	$strSQL="SELECT * FROM qua {$dieukien} ORDER BY ma_qua desc Limit {$dongbatdau},{$kichthuoctrang}";
-	$qua=mysql_query($strSQL,$ung);
+	$qua=mysqli_query($conn,$strSQL);
 ?>
 <form name="timqua" action="" method="post">
 <table width="450" cellpadding="2" cellspacing="0" border="0" align="right" bgcolor="#66A111" style="color:#FFFFCC"> 
@@ -73,7 +73,7 @@ Tìm Kiếm qua:&nbsp;&nbsp;
 </td><td>
 							<select name="loaiqua">
                               <option value="0">----Tên Loại Quả----</option>
-							 <?php while($row=mysql_fetch_array($loaiqua)) { ?>
+							 <?php while($row=mysqli_fetch_array($loaiqua)) { ?>
 								<?php if($row['ma_loai']==$maloaiqua) { ?>
 							  	<option value="<?php echo $row['ma_loai']; ?>" selected="selected" ><?php echo $row['ten_loai']; ?></option>
 								<?php } else { ?>
@@ -107,7 +107,7 @@ Tìm Kiếm qua:&nbsp;&nbsp;
 		</th>
 	</tr>
 	<?php $i=$dongbatdau; ?>
-		<?php while($row=mysql_fetch_array($qua)) { $i+=1; ?>
+		<?php while($row=mysqli_fetch_array($qua)) { $i+=1; ?>
 	<tr>
 	<?php 
 		//xu ly mau cho dong
@@ -135,8 +135,8 @@ Tìm Kiếm qua:&nbsp;&nbsp;
 		<td <?php echo $mausac; ?> >
 			<?php
 				$strSQL="SELECT * FROM loai_qua WHERE ma_loai=$row[ma_loai]";
-				$loaiqua=mysql_query($strSQL,$ung);
-				$rowloai=mysql_fetch_array($loaiqua);
+				$loaiqua=mysqli_query($conn,$strSQL);
+				$rowloai=mysqli_fetch_array($loaiqua);
 				echo $rowloai['ten_loai'];
 			?>
 		</td>

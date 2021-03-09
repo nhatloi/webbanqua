@@ -31,8 +31,8 @@ if(isset($_POST['hientrang']))
 
 //phan trang
 $strSQL="SELECT count(*) FROM  dondathang {$dieukien}";
-	$qua=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($qua);
+	$qua=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($qua);
 	$sodong=$row[0];
 	
 	$kichthuoctrang=10;
@@ -54,7 +54,7 @@ $strSQL="SELECT count(*) FROM  dondathang {$dieukien}";
 		}
 	
 	$strSQL="SELECT * FROM  dondathang {$dieukien} ORDER BY ma_dh desc Limit {$dongbatdau},{$kichthuoctrang}";
-	$dondathang=mysql_query($strSQL,$ung);
+	$dondathang=mysqli_query($conn,$strSQL);
 	//////////////////////////////////////////////////////////////
 ?>
 <table width="750" cellpadding="2" cellspacing="0" border="0" class="admintable" style="border-right:#E9E9E9 1px solid; border-top:#E9E9E9 1px solid;" align="right">
@@ -76,7 +76,7 @@ $strSQL="SELECT count(*) FROM  dondathang {$dieukien}";
 		</th>
 	</tr>
 	<?php $i=$dongbatdau; ?>
-		<?php while($row=mysql_fetch_array($dondathang)) { $i+=1; ?>
+		<?php while($row=mysqli_fetch_array($dondathang)) { $i+=1; ?>
 	<tr>
 	<?php 
 
@@ -96,8 +96,8 @@ $strSQL="SELECT count(*) FROM  dondathang {$dieukien}";
 		<?php 
 			//lay chi tiet cua khach hang 
 			$strSQL2="SELECT * FROM khach_hang WHERE ma_kh={$row['ma_kh']}";
-			$khachhang=mysql_query($strSQL2,$ung);
-			$rowKH=mysql_fetch_array($khachhang);
+			$khachhang=mysqli_query($conn,$strSQL2);
+			$rowKH=mysqli_fetch_array($khachhang);
 			
 		?>
 			<?php echo $rowKH['ho_kh']." ".$rowKH['ten_kh']; ?>

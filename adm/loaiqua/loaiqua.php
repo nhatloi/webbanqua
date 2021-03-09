@@ -1,7 +1,7 @@
 
 <?php
 	$strSQL="SELECT * FROM loai_qua";
-	$loai_qua=mysql_query($strSQL,$ung);
+	$loai_qua=mysqli_query($conn,$strSQL);
 	
 	//phan hien thi trang them va sua
 	if(isset($_POST['chentrang']))

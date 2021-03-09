@@ -14,11 +14,11 @@ function xoa_dondathang()
 	
 	//xoa don dat hang
 	$strSQL="DELETE FROM dondathang WHERE ma_dh={$madh}";
-	mysql_query($strSQL);
+	mysqli_query($strSQL);
 	
 	//xoa mat hang khoi chi tiet dat hang
 	$strSQL="DELETE FROM ct_dondathang WHERE ma_dh={$madh}";
-	mysql_query($strSQL);
+	mysqli_query($strSQL);
 	
 	return"Bạn Đã Xóa Thành Công Đơn Đặt Hàng này!";
 }

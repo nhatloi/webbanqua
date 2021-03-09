@@ -3,8 +3,8 @@
 		$maqua=$_POST['maqua'];
 		
 	$strSQL="SELECT * FROM qua WHERE ma_qua={$maqua}";
-	$quasua=mysql_query($strSQL,$ung);
-	$rowsua=mysql_fetch_array($quasua);
+	$quasua=mysqli_query($conn,$strSQL);
+	$rowsua=mysqli_fetch_array($quasua);
 	
 ?>
 <form action="" method="post" name="themqua">
@@ -21,8 +21,8 @@
 		<select name="loaiqua">
 			<?php 
 			$strSQL="SELECT * FROM loai_qua";
-			$loaiqua=mysql_query($strSQL,$ung);
-			while($rowloai=mysql_fetch_array($loaiqua)) { ?>
+			$loaiqua=mysqli_query($conn,$strSQL);
+			while($rowloai=mysqli_fetch_array($loaiqua)) { ?>
 			<option value="<?php echo $rowloai['ma_loai']; ?>"><?php echo $rowloai['ten_loai']; ?></option>
 			<?php } ?>
         </select>   

@@ -2,8 +2,8 @@
 	if(isset($_POST['malienhe']))
 		$malienhe=$_POST['malienhe'];
 	$strSQL="SELECT * FROM lien_he WHERE ma_lh={$malienhe}";
-	$banglienhe=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($banglienhe);
+	$banglienhe=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($banglienhe);
 	
 	$gioi=$row['gioi_nguoi_lh'];
 			if($gioi==2)

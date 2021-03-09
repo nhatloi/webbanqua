@@ -9,8 +9,8 @@
 		$dieukien="WHERE ".$dieukien;
 	//phan trang
 $strSQL="SELECT count(*) FROM khach_hang {$dieukien}";
-	$qua=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($qua);
+	$qua=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($qua);
 	$sodong=$row[0];
 	
 	$kichthuoctrang=10;
@@ -32,7 +32,7 @@ $strSQL="SELECT count(*) FROM khach_hang {$dieukien}";
 		}
 	
 	$strSQL="SELECT * FROM khach_hang {$dieukien} ORDER BY ma_kh desc Limit {$dongbatdau},{$kichthuoctrang}";
-	$khach_hang=mysql_query($strSQL,$ung);
+	$khach_hang=mysqli_query($conn,$strSQL);
 ?>
 <form name="timkhach" action="" method="post">
 <table width="421" cellpadding="2" cellspacing="0" border="0" align="right" bgcolor="#66A111" style="color:#FFFFCC"> 
@@ -61,7 +61,7 @@ Nhập Tên Đăng Nhập:&nbsp;&nbsp;
 		</th>
 	</tr>
 	<?php $i=$dongbatdau; ?>
-		<?php while($row=mysql_fetch_array($khach_hang)) { $i+=1; ?>
+		<?php while($row=mysqli_fetch_array($khach_hang)) { $i+=1; ?>
 	<tr>
 	<?php 
 		//xu ly mau cho dong

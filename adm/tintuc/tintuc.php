@@ -10,8 +10,8 @@ $dieukien="";
 		$dieukien="WHERE ".$dieukien;
 //phan trang
 $strSQL="SELECT count(*) FROM tin_tuc {$dieukien}";
-	$tintuc=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($tintuc);
+	$tintuc=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($tintuc);
 	$sodong=$row[0];
 	
 	$kichthuoctrang=10;
@@ -33,7 +33,7 @@ $strSQL="SELECT count(*) FROM tin_tuc {$dieukien}";
 		}
 	
 	$strSQL="SELECT * FROM tin_tuc {$dieukien} ORDER BY ma_tt desc Limit {$dongbatdau},{$kichthuoctrang}";
-	$tintuc=mysql_query($strSQL,$ung);
+	$tintuc=mysqli_query($conn,$strSQL);
 ?>
 
 <form name="timtin" action="" method="post">
@@ -64,7 +64,7 @@ Tìm Kiếm Tin:
 		</th>
 	</tr>
 	<?php $i=$dongbatdau; ?>
-		<?php while($row=mysql_fetch_array($tintuc)) { $i+=1; ?>
+		<?php while($row=mysqli_fetch_array($tintuc)) { $i+=1; ?>
 	<tr>
 	<?php 
 		//xu ly mau cho dong
