@@ -12,7 +12,7 @@
 	else
 	{
 	$strSQL="SELECT * FROM adm ORDER BY ma_adm desc";
-	$admin=mysql_query($strSQL,$ung);
+	$admin=mysqli_query($conn,$strSQL);
 	
 ?>
 	<?php
@@ -41,7 +41,7 @@
 		</th>
 	</tr>
 	<?php $i=0; ?>
-		<?php while($rowADM=mysql_fetch_array($admin)) { $i+=1; ?>
+		<?php while($rowADM=mysqli_fetch_array($admin)) { $i+=1; ?>
 	<tr>
 	<?php 
 		//xu ly mau cho dong

@@ -3,8 +3,8 @@
 		$maadmin=$_POST['maadmin'];
 		
 		$strSQL="SELECT * FROM adm WHERE ma_adm={$maadmin}";
-		$hitietadmin=mysql_query($strSQL,$ung);
-		$rowCTAD=mysql_fetch_array($hitietadmin);
+		$hitietadmin=mysqli_query($conn,$strSQL);
+		$rowCTAD=mysqli_fetch_array($hitietadmin);
 ?>
 <form action="" method="post" name="suaadmin">
   <table width="750" border="0" cellpadding="2" cellspacing="0" class="admintable" style="border-right:#E9E9E9 1px solid; border-top:#E9E9E9 1px solid;" align="right">

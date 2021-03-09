@@ -16,7 +16,7 @@ $thongbao="";
 //ham xoa admin
 function xoa_admin()
 {
-	global $ung;
+	global $conn;
 	if(isset($_POST['maadmin']))
 		$maadmin=$_POST['maadmin'];
 	//kiem tra quyen han
@@ -24,7 +24,7 @@ function xoa_admin()
 			return "Không Thể Xóa Admin";
 	//khong thoa man
 	$strSQL="DELETE FROM adm WHERE ma_adm='{$maadmin}'"	;
-	mysql_query($strSQL,$ung);
+	mysqli_query($conn,$strSQL);
 		return "Xóa Thành Công Tài Khoản Này!";
 	
 }
@@ -49,22 +49,22 @@ function them_admin()
 	
 	//kiem tra ten dang nhap co bi trung hay khong
 	$strSQL="SELECT COUNT(*) FROM adm WHERE ten_dn='{$tendangnhap}'";
-	$kiem_tra=mysql_query($strSQL,$ung);
-	$row=mysql_fetch_array($kiem_tra);
+	$kiem_tra=mysqli_query($conn,$strSQL);
+	$row=mysqli_fetch_array($kiem_tra);
 	
 	if($row[0]>0)
 		return "Tên Đăng Nhập Này Đã Tồn Tại";
 		
 	//neu tqua man tiep tuc
 	$strSQL="INSERT INTO adm(ten_dn,mat_khau,ho,ten,gioi_tinh) VALUES('{$tendangnhap}','{$matkhau}','{$quadmin}','{$tenadmin}','{$gioitinh}')";
-	mysql_query($strSQL);
+	mysqli_query($strSQL);
 	
 		return "Thêm Thành Công Quản Trị Viên";
 }
 // ham sua thong tin
 function sua_admin()
 {
-	global $ung;
+	global $conn;
 	if(isset($_POST['maadmin']))
 		$maadmin=$_POST['maadmin'];
 		
@@ -81,7 +81,7 @@ function sua_admin()
 		$gioitinh=$_POST['gioitinh'];
 	
 	$strSQL="UPDATE adm SET mat_khau='{$matkhau}',ho='{$quadmin}',ten='{$tenadmin}',gioi_tinh='{$gioitinh}' WHERE ma_adm={$maadmin}";
-	mysql_query($strSQL,$ung);
+	mysqli_query($conn,$strSQL);
 	
 	return "Đã Sửa Thành Công Thông Tin Tài KHoản Này!";
 }
