@@ -1,5 +1,4 @@
 <?php
-session_start();
 $string = md5(time());
 $string = substr($string, 0, 6);
  
