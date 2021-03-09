@@ -5,7 +5,7 @@ $string = substr($string, 0, 6);
  
 $_SESSION['maxacnhan'] = $string;
  
-$img = imagecreatefromgif('nencaptcha.gif');
+$img = imagecreate(150,50);
 $background = imagecolorallocate($img, 0,0,0);
 $text_color = imagecolorallocate($img, 255,255,255);
 imagestring($img, 4,40,15, $string, $text_color);
