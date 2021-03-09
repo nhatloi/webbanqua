@@ -30,7 +30,7 @@
 		</th>
 	</tr>
 	<?php $i=0; ?>
-		<?php while($row=mysql_fetch_array($loai_qua)) { $i+=1; ?>
+		<?php while($row=mysqli_fetch_array($loai_qua)) { $i+=1; ?>
 	<tr>
 	<?php 
 		//xu ly mau cho dong
