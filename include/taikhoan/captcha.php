@@ -9,6 +9,6 @@ $text_color = imagecolorallocate($img, 255,255,255);
 //imagestring($img, 4,40,15, $string, $text_color);
  
 header("Content-type: image/png");
-imagepng($img);
+
 imagedestroy($img);
 ?>
