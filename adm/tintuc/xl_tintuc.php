@@ -21,7 +21,7 @@ function xoa_tintuc()
 	
 		$strSQL="DELETE FROM tin_tuc WHERE ma_tt ={$matintuc}";
 		mysqli_query($conn,$strSQL);
-	return "B?n �� X�a Th�nh C�ng Tin T?c N�y!";
+	return "Xóa thành công tin tức!";
 }
 
 //ham them tin tuc
@@ -40,7 +40,7 @@ function them_tin_tuc()
 	$strSQL="INSERT INTO tin_tuc(tieu_de,hinh_anh,noi_dung) VALUES('{$tieudetintuc}','{$hinhanh}','{$noidungtintuc}')";
 	mysqli_query($conn,$strSQL);
 	
-	return "�� Th�m Th�nh C�ng Tin T?c N�y";
+	return "Đã thêm thành công tin tức này";
 }
 // ham sua tin tuc
 function sua_tintuc()
@@ -61,7 +61,7 @@ function sua_tintuc()
 	$strSQL="UPDATE tin_tuc SET tieu_de='{$tieudetintuc}',hinh_anh='{$hinhanh}',noi_dung='{$noidungtintuc}' WHERE ma_tt={$matt}";	
 	mysqli_query($conn,$strSQL);
 	
-	return "B?n �� S?a Th�nh C�ng Tin T?c N�y!";
+	return "Sửa tin tức thành công!";
 		
 }
 //in thong bao
@@ -77,7 +77,7 @@ echo "<p class='pp'><center><span style='color:#FF9900;'>{$thongbao}</span>";
 echo "<br />";
 echo "<br />";
 ?>
-<center><a href="#" onclick="adm_chuyentrang('quanlytintuc')">B?m V�o ��y �? V? Trang Qu?n L� Tin T?c</a></center>
+<center><a href="#" onclick="adm_chuyentrang('quanlytintuc')">Bấm vào đây để quay về trang chủ tin tức</a></center>
 <?php
 echo "</p>";
 echo "</td>";

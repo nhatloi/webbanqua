@@ -8,7 +8,7 @@
 		var xnmatkhau=formdangky.xnmatkhau.value;
 		var ho=formdangky.ho.value;
 		var ten=formdangky.ten.value;
-		var sdtquai=formdangky.sdt.value;
+		var sdthoai=formdangky.sdt.value;
 		var email=formdangky.email.value;
 		var diachi=formdangky.diachi.value;
 		
@@ -96,10 +96,10 @@
 		}
 		
 		kieu=/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/
-		lt=kieu.test(sdtquai)
-		if(sdtquai=="")
+		lt=kieu.test(sdthoai)
+		if(sdthoai=="")
 		{
-			document.all('loidientquai').innerHTML="bạn chưa nhập vào số điện thoại!"
+			document.all('loidienthoai').innerHTML="bạn chưa nhập vào số điện thoại!"
 			formdangky.sdt.style.backgroundColor='#FFFFCC'
 			formdangky.sdt.focus()
 			return false
@@ -108,14 +108,14 @@
 		{	
 			if(lt==false)
 			{
-				document.all('loidientquai').innerHTML="Số điện thoại nhập sai định dạng!"
+				document.all('loidienthoai').innerHTML="Số điện thoại nhập sai định dạng!"
 				formdangky.sdt.style.backgroundColor='#FFFFCC'
 				formdangky.sdt.focus()
 				return false
 			}
 			else
 			{
-			document.all('loidientquai').innerHTML=""
+			document.all('loidienthoai').innerHTML=""
 			formdangky.sdt.style.backgroundColor="#FFFFFF"
 			}
 			
@@ -224,7 +224,7 @@
                               <td>
                                 <input name="sdt" type="text" id="sdt" style="width:200px;" maxlength="12"
 								value=""/>
-								<br /><span id="loidientquai" style="color:#FF6600;"></span>
+								<br /><span id="loidienthoai" style="color:#FF6600;"></span>
                               </td>
                             </tr>
                             <tr>

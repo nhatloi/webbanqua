@@ -1,9 +1,3 @@
-<?php
-
-	if ($loaiqua = mysqli_query($conn, "SELECT * FROM loai_qua")) {
-	  }
-
-?>
 <style type="text/css">
 	tr td{
 		text-align: left;
@@ -48,9 +42,13 @@
 <div id="left">
     <h1>DANH MỤC</h1>
     <ul>
-		<?php while($row= mysqli_fetch_array($loaiqua)) { ?> 
-		    <li><a href="#" onclick="loaiqua_onsubmit('<?php echo $row['ma_loai']; ?>')"><?php echo $row['ten_loai']; ?></a></li>
-		<?php } ?>
+		<?php
+			if ($loaiqua = mysqli_query($conn, "SELECT * FROM loai_qua")) {
+				while($row= mysqli_fetch_array($loaiqua)) { ?> 
+					<li><a href="#" onclick="loaiqua_onsubmit('<?php echo $row['ma_loai']; ?>')"><?php echo $row['ten_loai']; ?></a></li>
+				<?php } 
+			}
+		?>
     </ul>
 </div>
 

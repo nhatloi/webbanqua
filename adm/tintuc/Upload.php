@@ -3,67 +3,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Upload Picture</title>
 <style type="text/css">
-<!--
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
--->
 </style></head>
 <body>
-<script language="JavaScript">
-<!--
-function Check(){
-if (document.frmuploaded.uploaded.value=="") {
-		alert("Bạn chưa nhập đường dẫn cho File ảnh...");
-		document.frmuploaded.uploaded.focus();
-		return false;
-	}
-	
-var filename = document.frmuploaded.uploaded.value;	
-	var dotpos;
-	filename = filename.substring(filename.lastIndexOf("\\")+1,filename.length);
-	dotpos=filename.lastIndexOf('.');
-	ext=filename.substr(dotpos+1,3);
-	ext=ext.toLowerCase();
-	if (ext!="")
-		if ((ext!="gif") && (ext!="jpg") && (ext!="png")){
-			alert("Bạn chỉ được UPLOAD những File định dạng GIF, JPG, PNG.");
-			return false;
-		}
-	return true;
-}
-function insertStr(strValue,ha)
-{
-	//Sửa dòng này: tên form, tên điều khiển 	
-	//window.opener.document.frmThemSach.txthinhminhqua.value=strValue;
-	window.opener.document.themtintuc.hinhanh.value=ha;
-}
-
-function getFileExtension(filePath) { //v1.0
-  fileName = ((filePath.indexOf('/') > -1) ? filePath.substring(filePath.lastIndexOf('/')+1,filePath.length) : filePath.substring(filePath.lastIndexOf('\\')+1,filePath.length));
-  return fileName.substring(fileName.lastIndexOf('.')+1,fileName.length);
-}
-
-function checkFileUpload(form,extensions) { //v1.0
-  document.MM_returnValue = true;
-  if (extensions && extensions != '') {
-    for (var i = 0; i<form.elements.length; i++) {
-      field = form.elements[i];
-      if (field.type.toUpperCase() != 'FILE') continue;
-      if (field.value == '') {
-        alert('File is required!');
-        document.MM_returnValue = false;field.focus();break;
-      }
-      if (extensions.toUpperCase().indexOf(getFileExtension(field.value).toUpperCase()) == -1) {
-        alert('This file is not allowed for uploading!');
-        document.MM_returnValue = false;field.focus();break;
-  } } }
-}
-//-->
-</script>
+<script async src="https://imgbb.com/upload.js"></script>
 <?php
 $success="";
 //Thư mục chứa file upload

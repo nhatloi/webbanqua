@@ -41,9 +41,10 @@ $strSQL="SELECT count(*) FROM lien_he {$dieukien}";
 		<th width="200">
 			Thời Gian Liên Hệ
 		</th>
-		<th width="200" colspan="2" style="background:#FFFFFF;" align="center">
-			
+		<th width="200" colspan="2" style="background:#FFFFFF; color:#FF4500" align="center">
+			<a href="#" onclick="xoa_toanbo()">Xóa Tất Cả</a>
 		</th>
+		
 	</tr>
 	<?php $i=$dongbatdau; ?>
 		<?php while($row=mysqli_fetch_array($lien_he)) { $i+=1; ?>
@@ -121,6 +122,7 @@ $strSQL="SELECT count(*) FROM lien_he {$dieukien}";
 	<input name="malienhe" type="hidden" value="" />
 	<input name="trangchuyen" type="hidden" value="xllienhe" />
 	<input name="goihamxuly" type="hidden" value="xoalienhe" />
+	<input name="goihamxuly" type="hidden" value="xoatoanbo" />
 </form>
 <form action="" method="post" name="chitietlienhe">
 	<input name="malienhe" type="hidden" value="" />
@@ -134,6 +136,12 @@ $strSQL="SELECT count(*) FROM lien_he {$dieukien}";
 		lienhe.submit()
 	}
 	
+	function xoa_toanbo()
+	{
+		if(confirm('bạn có muốn xóa toàn bộ liên hệ của khách hàng không..!'))
+		lienhe.submit()
+	}
+
 	function chi_tiet(malienhe)
 	{
 		chitietlienhe.malienhe.value=malienhe

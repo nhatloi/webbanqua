@@ -1,9 +1,9 @@
 <?php
 	$dieukien="";
-	if(isset($_POST['txttukhoa']))
+	if(isset($_POST['txttukhoakh']))
 	{
-		$tukhoa=$_POST['txttukhoa'];
-		$dieukien="ten_dn Like '%{$tukhoa}%'";
+		$tukhoakh=$_POST['txttukhoakh'];
+		$dieukien="ten_dn Like '%{$tukhoakh}%' or ma_kh like '%{$tukhoakh}%' or ten_kh like '%{$tukhoakh}%' or sdt like '%{$tukhoakh}%'";
 	}
 	if($dieukien!="")
 		$dieukien="WHERE ".$dieukien;
@@ -37,9 +37,9 @@ $strSQL="SELECT count(*) FROM khach_hang {$dieukien}";
 <form name="timkhach" action="" method="post">
 <table width="421" cellpadding="2" cellspacing="0" border="0" align="right" bgcolor="#66A111" style="color:#FFFFCC"> 
 <tr><td align="center">
-Nhập Tên Đăng Nhập:&nbsp;&nbsp;
+Nhập Từ Khóa:&nbsp;&nbsp;
 </td><td>
-<input type="text" name="txttukhoa" id="txttukhoa" style="width:200px;" value="" />
+<input type="text" name="txttukhoakh" id="txttukhoakh" style="width:200px;" value="" />
 </td><td>
 <input name="trangchuyen" type="hidden" value="quanlykhachhang" />
 <input type="submit" value="Tìm" name="submit" />

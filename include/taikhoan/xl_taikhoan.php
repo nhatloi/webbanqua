@@ -63,7 +63,7 @@ function dangky_taikhoan()
 
 function capnhat_taikhoan()
 {
-	global $ung;
+	global $conn;
 	if(isset($_POST['makhachhang']))
 		$makhachhang=$_POST['makhachhang'];
 		
@@ -97,13 +97,14 @@ function capnhat_taikhoan()
 function timmatkhau_taikhoan()
 {
 	
-	global $ung;
-	if(isset($_POST['tendangnhap']) && isset($_POST['email']))
+	global $conn;
+	if(isset($_POST['tendangnhap']) && isset($_POST['email']) && isset($_POST['sdt']) )
 	{
 		$tendangnhap=$_POST['tendangnhap'];
 		$email=$_POST['email'];
+		$sdt=$_POST['sdt'];
 		
-		$strSQL="SELECT * FROM khach_hang WHERE ten_dn='{$tendangnhap}' AND email='{$email}'";
+		$strSQL="SELECT * FROM khach_hang WHERE ten_dn='{$tendangnhap}' AND email='{$email}' AND sdt='{$sdt}'";
 		$khachhang=mysqli_query($conn,$strSQL);
 		
 		if(mysqli_num_rows($khachhang)>0)

@@ -10,13 +10,13 @@ $thongbao="";
 
 function lien_he()
 {
-	global $ung;
+	global $conn;
 	if(isset($_POST['txtten']))
 		$tenkhach=$_POST['txtten'];
 		$_SESSION['tenkhach']=$tenkhach;
 		
-	if(isset($_POST['txtsdt']))
-		$sdtkhach=$_POST['txtsdt'];
+	if(isset($_POST['sdtlh']))
+		$sdtkhach=$_POST['sdtlh'];
 		$_SESSION['sdtkhach']=$sdtkhach;
 		
 	if(isset($_POST['txtemail']))
@@ -30,17 +30,9 @@ function lien_he()
 		$diachikhach=$_POST['txtdc'];
 		$_SESSION['diachikhach']=$diachikhach;
 			
-	if(isset($_POST['txttquai']))
-		$noidung=$_POST['txttquai'];
+	if(isset($_POST['txtnd']))
+		$noidung=$_POST['txtnd'];
 		$_SESSION['noidung']=$noidung;
-	//ma xac nhan
-		if(isset($_POST['code']));
-		{
-		$recode=$_POST['code'];
-		if($recode!=$_SESSION['maxacnhan'])
-		return "Bạn Nhập Sai Mã Xác Nhận Vui Lòng Nhập Lại! <br /> <strong><a href="."\"#\""."onclick="."\"dentrang_onsubmit('lienhe')"."\">"
-		."Bấm Vào Đây Để Nhập Lại Mã Xác Nhận</a></strong>";
-		}
 	
 	$strSQL="INSERT INTO lien_he(ten_nguoi_lh,sdt_nguoi_lh,email_nguoi_lh,gioi_nguoi_lh,diachi_nguoi_lh,noi_dung)
 					VALUES ('{$tenkhach}','{$sdtkhach}','{$emailkhach}','{$gioitinhkhach}','{$diachikhach}','{$noidung}')";		

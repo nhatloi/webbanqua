@@ -9,7 +9,7 @@
 		</tr>
 		<tr>
 		  <td>
-			<?php include('xl_taikquan.php');?>
+			<?php include('xl_taikhoan.php');?>
 			<br />
 			<center>Nhập chính xác Tên đăng nhập và email đăng ký có thể tìm lại được mật khẩu</center>
 			<form name="quenmatkhau" method="post" action="">
@@ -27,9 +27,15 @@
                     </td>
                   </tr>
                   <tr>
+                    <td>&nbsp;&nbsp;Số Điện Thoại Đã Đăng Ký </td>
+                    <td>
+                      <input name="sdt" type="text" id="sdt" style="width:200px;"/>
+                    </td>
+                  </tr>
+                  <tr>
                     <td colspan="2" align="center">
 						<input type="hidden" name="goiham" value="timmatkhau">
-						<input name="view" type="hidden" value="xltaikquan" />
+						<input name="view" type="hidden" value="xltaikhoan" />
                       <input type="button" name="Button" value="Hiện Mật Khẩu" style="background:#FFFFFF;" onClick="timmatkhau_submit()" />
                     </td>
                   </tr>

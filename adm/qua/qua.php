@@ -6,11 +6,11 @@
 	$strSQL="SELECT * FROM loai_qua";
 	$loaiqua=mysqli_query($conn,$strSQL);
 	//kiem tra xem ten qua co duoc nhap vao hay khong
-	if(isset($_POST['txttukhoa']))
+	if(isset($_POST['txttukhoaqua']))
 		{
-			$tukqua=$_POST['txttukhoa'];
+			$tukhoa=$_POST['txttukhoaqua'];
 			if($tukhoa!="")
-			$dieukien="ten_qua Like '%{$tukhoa}%'";
+			$dieukien="ten_qua Like '%{$tukhoa}%' or ma_qua Like '%{$tukhoa}%' or ngay_d Like '%{$tukhoa}%'";
 		}	
 	//kiem tra ma loai qua co duco nhap vao hay khong
 		if(isset($_POST['loaiqua']))
@@ -69,7 +69,7 @@ $strSQL="SELECT count(*) FROM qua {$dieukien}";
 <tr><td>
 Tìm Kiếm qua:&nbsp;&nbsp;
 </td><td>
-<input type="text" name="txttukhoa" id="txttukhoa" style="width:150px;" value="" />
+<input type="text" name="txttukhoaqua" id="txttukhoaqua" style="width:150px;" value="" />
 </td><td>
 							<select name="loaiqua">
                               <option value="0">----Tên Loại Quả----</option>

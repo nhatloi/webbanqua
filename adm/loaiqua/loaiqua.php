@@ -1,4 +1,3 @@
-
 <?php
 	$strSQL="SELECT * FROM loai_qua";
 	$loai_qua=mysqli_query($conn,$strSQL);

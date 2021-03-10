@@ -5,11 +5,13 @@ $thongbao="";
 		$lenhthucthi=$_POST['goihamxuly'];
 		if($lenhthucthi=='xoalienhe')
 			$thongbao=xoa_lienhe();
-		
+		if($lenhthucthi=='xoatoanbo')
+			$thongbao=xoa_toanbo();
 	}
+	
 function xoa_lienhe()
 {
-	global $ung;
+	global $conn;
 	if(isset($_POST['malienhe']))
 		$malienhe=$_POST['malienhe'];
 		
@@ -17,6 +19,15 @@ function xoa_lienhe()
 	mysqli_query($conn,$strSQL);
 	return "Bạn Đã Xóa Thành Công Liên Hệ Này";
 }
+
+function xoa_toanbo()
+{
+	global $conn;
+	$strSQL="DELETE FROM lien_he";
+	mysqli_query($conn,$strSQL);
+	return "Bạn Đã Xóa Thành Công Tất Cả Liên Hệ Này";
+}
+
 //in thong bao
 
 if($thongbao !="")
