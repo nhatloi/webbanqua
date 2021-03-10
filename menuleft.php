@@ -53,8 +53,8 @@
 </div>
 
 	<form action="" method="post" name="loaiqua">
-	<input name="MaLH" type="hidden" value="" />
-	<input name="gia" type="hidden" value="" />
+	<input name="MaLH" id="MaLH" type="hidden" value="" />
+	<input name="gia" id="gia" type="hidden" value="" />
 	<input name="view" type="hidden" value="sanpham" />
 	</form>
 	<script>

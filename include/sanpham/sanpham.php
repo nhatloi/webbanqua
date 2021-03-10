@@ -11,7 +11,7 @@
 		
 		$strSQLH="SELECT * FROM loai_qua WHERE ma_loai={$ma}";
 		$hienthiloai=mysqli_query($conn,$strSQLH);
-		$rowH=@mysqli_fetch_array($hienthiloai);
+		$rowH=mysqli_fetch_array($hienthiloai);
 		$inloaiqua=$rowH['ten_loai'];
 	}
 	//hien thi theo gia
