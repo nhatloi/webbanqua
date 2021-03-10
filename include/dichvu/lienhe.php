@@ -152,7 +152,7 @@
       <tr>
 	 
        		<td width="120">Số điện thoại</td>
-        	<td width="330"><input name="sdtlh" type="text" id="sdtlh" size="40" value="" />
+        	<td width="330"><input name="sdtlh" type="text" id="sdtlh" size="40" value="<?php if($_SESSION['hovaten']!= "") echo $row['sdt']; ?>" />
       			  &nbsp;&nbsp;<font color="#FF6600">*</font><br />
 			<span id="loisdt" style="color:#FF6600;"></span>		
 			</td>
@@ -183,7 +183,7 @@
       </tr>
 	  <tr>
         	<td align="left">Nội dung</td>
-       		 <td><input name="txtnd" id = "txtnd" style="border-right:none; height:40px" value="<?php if($_SESSION['hovaten']!= "") echo $row['sdt']; ?>"/>
+       		 <td><input name="txtnd" id = "txtnd" style="border-right:none; height:40px" value=""/>
 				 &nbsp;&nbsp;<font color="#FF6600">*</font>
 		<br />
 		<span id="loind" style="color:#FF6600;"></span>		</td>
