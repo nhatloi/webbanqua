@@ -183,7 +183,7 @@
       </tr>
 	  <tr>
         	<td align="left">Nội dung</td>
-       		 <td><input name="txtnd" id = "txtnd" style="border-right:none; height:40px" value=""/>
+       		 <td><input name="txtnd" id = "txtnd" style="border-right:none; height:40px" value="<?php if($_SESSION['hovaten']!= "") echo $row['sdt']; ?>"/>
 				 &nbsp;&nbsp;<font color="#FF6600">*</font>
 		<br />
 		<span id="loind" style="color:#FF6600;"></span>		</td>
