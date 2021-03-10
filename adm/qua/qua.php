@@ -10,7 +10,7 @@
 		{
 			$tukhoa=$_POST['txttukhoaqua'];
 			if($tukhoa!="")
-			$dieukien="ten_qua Like '%{$tukhoa}%' or ma_qua Like '%{$tukhoa}%' or ngay_d Like '%{$tukhoa}%'";
+			$dieukien="ten_qua Like '%{$tukhoa}%' or ma_qua Like '%{$tukhoa}%'";
 		}	
 	//kiem tra ma loai qua co duco nhap vao hay khong
 		if(isset($_POST['loaiqua']))
