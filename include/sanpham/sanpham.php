@@ -26,32 +26,32 @@
 		}
 		else if($gia=='hai')
 		{
-			$dieukien="WHERE gia >= 30000 and gia <50000";
+			$dieukien=" WHERE gia >= 30000 and gia <50000";
 			$inloaiqua="Có Giá Từ 30.000đ Đến Dưới 50.000đ";
 		}
 		else if($gia=='ba')
 		{
-			$dieukien="WHERE gia >= 50000 and gia < 75000";
+			$dieukien=" WHERE gia >= 50000 and gia < 75000";
 			$inloaiqua="Có Giá Từ 50.000đ Đến Dưới 75.000đ";
 		}
 		else if($gia=='bon')
 		{
-			$dieukien="WHERE gia >= 75000 and gia < 10000";
+			$dieukien=" WHERE gia >= 75000 and gia < 10000";
 			$inloaiqua="Có Giá Từ 75.000đ Đến Dưới 100.000đ";
 		}
 		else if($gia=='nam')
 		{
-			$dieukien="WHERE gia >= 100000 and gia < 150000";
+			$dieukien=" WHERE gia >= 100000 and gia < 150000";
 			$inloaiqua="Có Giá Từ 100.000đ Đến Dưới 150.000đ";
 			
 		}
 		else if($gia=='sau')
 		{
-			$dieukien="WHERE gia >= 150000";
+			$dieukien=" WHERE gia >= 150000";
 			$inloaiqua="Có Giá Trên 150.000đ";
 		}
-		
-		$strSQL="SELECT count(*) FROM qua {$dieukien} ;";
+
+		$strSQL="SELECT * FROM qua where gia < 30000 ";
 		$qua=mysqli_query($conn,$strSQL);
 		$row=mysqli_fetch_array($qua);
 	}
