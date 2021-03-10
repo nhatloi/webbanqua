@@ -50,6 +50,10 @@
 			$dieukien="WHERE gia >= 150000";
 			$inloaiqua="Có Giá Trên 150.000đ";
 		}
+		
+		$strSQL="SELECT count(*) FROM qua {$dieukien} ;";
+		$qua=mysqli_query($conn,$strSQL);
+		$row=mysqli_fetch_array($qua);
 	}
 	//hien thi san pham dac biet
 	if(isset($_POST['trangthai']))
