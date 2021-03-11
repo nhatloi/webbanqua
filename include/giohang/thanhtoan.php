@@ -11,10 +11,8 @@
 			</td>
 		</tr>
 		<tr>	
-			<td width="200" align="center">Tên Khách Hàng</td><td width="387" align="center"><?php echo $_SESSION['hovaten']; ?></td>
-		</tr>
-		<tr>
-			<td align="center">Email</td><td align="center"><?php echo $rowtt['email'] ?></td>
+			<td width="200" align="center">Tên Khách Đặt Hàng</td>
+			<td width="387" align="center"><?php echo $_SESSION['hovaten']; ?></td>
 		</tr>
 		<tr>
 			<td align="center">Số Điện Thoại</td><td align="center"><?php echo $rowtt['sdt'] ?></td>
@@ -28,20 +26,23 @@
 <script>
 function kiemtra()
 {
-	var ngaythang=giaohang.ngaygiao.value;
+	var nguoinhan=giaohang.nguoinhan.value;
+	var sdtnguoinhan=giaohang.sdtnguoinhan.value;
+	var diachigiao=giaohang.diachigiao.value;
 		
-		if(ngaythang=="")
+		if(nguoinhan=="" || sdtnguoinhan=="" || diachigiao=="")
 		{
-			document.all('baoloi').innerHTML="vui lòng nhập ngày giao hàng!"
-			giaohang.ngaygiao.style.backgroundColor='#FFFFCC'
-			giaohang.ngaygiao.focus()
+			document.all('baoloi').innerHTML="Phải điền đầy đủ thông tin!"
+			giaohang.nguoinhan.style.backgroundColor='#FFFFCC'
+			giaohang.nguoinhan.focus()
 			return false
 		}
 		else
 		{
-			document.all('loihoten').innerHTML=""
-			giaohang.ngaygiao.style.backgroundColor='#FFFFFF'
-			
+			document.all('baoloi').innerHTML=""
+			giaohang.nguoinhan.style.backgroundColor='#FFFFFF'
+			giaohang.sdtnguoinhan.style.backgroundColor='#FFFFFF'
+			giaohang.diachigiao.style.backgroundColor='#FFFFFF'
 		}
 		return true
 }
@@ -54,12 +55,27 @@ function kiemtra()
 			</td>
 		</tr>
 		<tr>	
-			<td align="center">Ngày Giao Hàng</td>
+			<td align="center">Ngày Giao Hàng Dự kiến</td>
 			<td>&nbsp;&nbsp;
-				<input name="ngaygiao" type="text" id="ngaygiao" style="width:235px;" />
-  				<input type="button" name="Button" value="Date" onclick="showCalendar('ngaygiao')" />
-				<br />
-				<span id="baoloi" style="color:#FF6600;"></span>	
+			<?php
+				$tomorrow_timestamp = strtotime("+ 4 day");
+				$tomorrow_date = date("d-m-Y", $tomorrow_timestamp);
+				echo $tomorrow_date;
+				$_SESSION['ngaygiao']=$tomorrow_date;
+				?>
+				
+			</td>
+		</tr>
+		<tr>
+			<td width="200" align="center">Người nhận hàng:</td><td width="387">&nbsp;&nbsp;
+			<input name="nguoinhan"style="border-right:none;" type="text" id="nguoinhan" value="<?php echo $_SESSION['hovaten']; ?>"/>
+			</td>
+			<br />
+				<span id="baoloi" style="color:#FF6600;"></span>
+		</tr>
+		<tr>
+			<td width="200" align="center">Số điện thoại Người nhận hàng:</td><td width="387">&nbsp;&nbsp;
+			<input name="sdtnguoinhan"style="border-right:none;" type="text" id="sdtnguoinhan" value="<?php echo $rowtt['sdt'] ?>"/>
 			</td>
 		</tr>
 		<tr>

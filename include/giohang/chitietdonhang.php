@@ -12,15 +12,11 @@
 		$rowKH=mysqli_fetch_array($khachhang);
 	}
 ?>
-<table width="750" cellpadding="2" cellspacing="0" border="0" class="admintable" style="border-right:#E9E9E9 1px solid; border-top:#E9E9E9 1px solid;" align="right">
-	<tr>
-		<th> chi tiết đơn đặt hàng của : <?php echo $rowKH['ho_kh']." ".$rowKH['ten_kh']; ?>
-		</th>
-	</tr>
+<table width="587" cellpadding="2" cellspacing="0" border="0" class="admintable" style="border-right:#E9E9E9 1px solid; border-top:#E9E9E9 1px solid;" align="right">
 	<tr>
 		<td>
 		<p class="pp">
-		<center>Thông tin khách hàng</center>
+		<center>Thông tin khách mua hàng</center>
 		<br />
 		<table width="490" cellpadding="2" cellspacing="0" border="0" 
 		class="admintable" style="border-right:#E9E9E9 1px solid; border-top:#E9E9E9 1px solid;" align="center">
@@ -39,13 +35,8 @@
 		</td>
 		</tr>
 		<tr>
-		<td align="center">Email: </td>
-		<td>
-		&nbsp;&nbsp;<?php echo $rowKH['email']; ?>.</td>
-		</tr>
-		<tr>
 		<td align="center">
-		Địa hỉ Giao Hàng: </td>
+		Địa chỉ: </td>
 		<td>
 		&nbsp;&nbsp;<?php echo $rowKH['dia_chi']; ?>.
 		</td>
@@ -125,60 +116,18 @@
 		<br />
 		tổng tiá trị giỏ hàng: <?php echo number_format($tongtien,0,'.','.'); ?> VNĐ
 		<br />
-		Ngày Giao Hàng Dự Kiến: <?php echo $rowDH['ngay_gh']; ?>
+		Ngày Dự Kiến Giao Hàng: <?php echo $rowDH['ngay_gh']; ?>
 		<br />
 		
 		<?php
-			if($rowDH['hien_trang']==-1)
-				echo "<font color='#D14F10'>Đơn Đặt Này Đã Hủy!</font>({})";
 			if($rowDH['hien_trang']==0)
-			{
-				echo "<font color='#D14F10'>Đơn Đặt Hàng Này Chưa Giao!</font>";
+				echo "<font color='#D14F10'>Đơn Đặt Hàng Này Đang Giao!</font>";
+			if($rowDH['hien_trang']==1)
+				echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đã Giao Nhận!</b></font>";
+			if($rowDH['hien_trang']==-1)
+				echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đã Hủy!</b></font>";
 		?>
-		<br />
-		<a href="#" onclick="capnhatdonhang(1)">Xác nhận đã giao đơn hàng</a>
-		<br /><br />
-		<form name="capnhat" action="" method="post">
-			  <input type="hidden" name="madh" value="<?php echo $madon; ?>" />
-			  <input type="hidden" name="trangchuyen" value="xl_dondathang" />
-			  <input type="hidden" name="hientrang" value=""/>
-			  <input type="text" name="ghichu" value="" placeholder="Lý do hủy đơn hàng?"/>
-		</form>
-		<a href="#" onclick="capnhatdonhang(-1)">Hủy đơn hàng</a>
-		<br />
-		<?php }
-		if($rowDH['hien_trang']==1){ 
-			echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đã Giao Nhận!</b></font>";
-		?>
-		<br />
-		<a href="#" onclick="xoa_dondathang('<?php echo $madon; ?>','xl_dondathang','xoadh')">Xóa Đơn Đặt Hàng Này</a>
-		<?php } ?>
 		</center>
 		</td>
 	</tr>	
-</table>		
-<form name="xldathang" action="" method="post">
-	<input type="hidden" name="trangchuyen" value="" />
-	<input type="hidden" name="goiham" value="xoadh" />
-	<input type="hidden" name="madh" value="" />
-</form>
-<script>
-	function xoa_dondathang(ma,trang,hanhdong)
-	{
-		xldathang.madh.value=ma
-		xldathang.trangchuyen.value=trang
-		xldathang.goiham.value=hanhdong
-		if(confirm('bạn có thực sự muốn xóa đơn đặt hàng này không!'))
-		xldathang.submit()
-	}
-
-	function capnhatdonhang(hientrang)
-	{
-		capnhat.hientrang.value=hientrang
-		if(hientrang==-1 && capnhat.ghichu.value=="")
-		if(confirm('Điền lý do hủy đơn!'))
-			return false;
-		capnhat.submit()
-	}
-
-</script>
+</table>

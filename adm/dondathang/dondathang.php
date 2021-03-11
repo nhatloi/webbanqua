@@ -103,11 +103,14 @@ $strSQL="SELECT count(*) FROM  dondathang {$dieukien}";
 			<?php echo $rowKH['ho_kh']." ".$rowKH['ten_kh']; ?>
 		</td>
 		<td <?php echo $mausac; ?> >
-			<?php 
+		<?php 
 			if($row['hien_trang']==0)
-				echo "Chưa Giao";
-			else
-				echo "<font color='#D4D0C8'> Đã Giao Hàng </font>";
+				echo "<font color='#00BFFF'> Đang giao </font>";
+			if($row['hien_trang']==1)
+				echo "<font color='#008000'> Đã Giao Hàng </font>";
+			if($row['hien_trang']==-1)
+				echo "<font color='#fd0000'> Đơn hủy </font>";
+
 			?>
 		</td>
 		<td width="100" align="center" <?php echo $mausac; ?>>

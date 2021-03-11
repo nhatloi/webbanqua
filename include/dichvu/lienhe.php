@@ -152,7 +152,7 @@
       <tr>
 	 
        		<td width="120">Số điện thoại</td>
-        	<td width="330"><input name="sdtlh" type="text" id="sdtlh" size="40" value="<?php if($_SESSION['hovaten']!= "") echo $row['sdt']; ?>" />
+        	<td width="330"><input name="sdtlh" type="text" id="sdtlh" size="40" value="" />
       			  &nbsp;&nbsp;<font color="#FF6600">*</font><br />
 			<span id="loisdt" style="color:#FF6600;"></span>		
 			</td>

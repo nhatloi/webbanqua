@@ -41,7 +41,7 @@
 		<tr>
 			<td>
 	<form name="giohangcuaban" action="" method="post">	
-		<input type="hidden" name="view" value="dathang" />	
+		<input type="hidden" name="view" value="dathang" />
 		<input type="hidden" name="hanhdong" value="capnhatgiohang" />		
 			 <table cellpadding="0" cellspacing="0" border="0" style="border:#CCCCCC 1px solid;border-bottom:none;border-left:none; margin-top:3px;" class="dongbang">
 			 		
@@ -80,8 +80,16 @@
 					<img src="images/icon.png" border="0" width="14" height="14" align="bottom" />
 					<a href="#" onclick="capnhatgiohang('capnhatgiohang')">Cập Nhật Giỏ Hàng</a>
 					<img src="images/icon.png" border="0" width="14" height="14" align="bottom" />
-					<a href="#" onclick="thanhtoan('thanhtoan')">Thanh Toán</a>
+					<?php if($tongtien!= 0) {
+					?>
+						<a href="#" onclick="thanhtoan('thanhtoan')">Thanh Toán</a>
+						<?php
+						}
+					?>
 					</td>
+					<tr>
+						<a href="#" onclick="dentrang_onsubmit('lichsudonhang')">Xem lịch sử mua hàng</a>
+					</tr>
                   </tr>
                 </table>			
 			</form>	
@@ -92,7 +100,7 @@
 	<center><span class="demuc"><b><?php echo $thongtin; ?></b></span></center>
 </div>
 <p>
-<form name="thanhgio" action="" method="post">
+<form name="thanhgia" action="" method="post">
 	<input type="hidden" name="view" value="dathang" />
 	<input type="hidden" name="viewthanhtoan" value="thanhtoan" />
 </form>
@@ -106,7 +114,7 @@
 	}
 	
 ?>
-<?php 
+<?php
 //-------------------------------------------
 }
 ?>
@@ -115,6 +123,7 @@
 	<input type="hidden" name="masp" value="" />
 	<input type="hidden" name="view" value="dathang" />
 </form>
+
 <script>
 	function xl_giohang(hanhdong,masp)
 	{
@@ -128,6 +137,6 @@
 	}
 	function thanhtoan()
 	{
-		thanhgio.submit()
+		thanhgia.submit()
 	}
 </script>

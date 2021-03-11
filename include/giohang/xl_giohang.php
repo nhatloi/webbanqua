@@ -137,15 +137,17 @@ function xoasanphamtronggio()
 	$arrdongia=$_SESSION['arrdongia'];
 	$n=$_SESSION['n'];
 	
-	 if(isset($_POST['makhachhang']))
+	if(isset($_POST['makhachhang']))
 	 	$makhachhang=$_POST['makhachhang'];	
-	 if(isset($_POST['ngaygiao']))
-	 	$ngaygiao=$_POST['ngaygiao'];
-	 if(isset($_POST['diachigiao']))
+	$ngaygiao=$_SESSION['ngaygiao'];
+	if(isset($_POST['diachigiao']))
 	 	$diachigiao=$_POST['diachigiao'];
-
+	if(isset($_POST['nguoinhan']))
+	 	$ten_ngnhan=$_POST['nguoinhan'];
+	if(isset($_POST['sdtnguoinhan']))
+	 	$sdt_ngnhan=$_POST['sdtnguoinhan'];
 	//luu thong tin vao don dat hang
-	$strSQL="INSERT INTO dondathang (ma_kh,ngay_gh,noi_giao) VALUES({$makhachhang},'{$ngaygiao}','{$diachigiao}')";
+	$strSQL="INSERT INTO dondathang (ma_kh,ngay_gh,noi_giao,tennguoinhan,sdt_ngnhan) VALUES({$makhachhang},'{$ngaygiao}','{$diachigiao}','{$ten_ngnhan}','{$sdt_ngnhan}')";
  	mysqli_query($conn,$strSQL);
 	
 	//Lay mahd 
