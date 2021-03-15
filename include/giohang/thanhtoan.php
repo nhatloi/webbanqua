@@ -58,10 +58,10 @@ function kiemtra()
 			<td align="center">Ngày Giao Hàng Dự kiến</td>
 			<td>&nbsp;&nbsp;
 			<?php
-				$tomorrow_timestamp = strtotime("+ 4 day");
-				$tomorrow_date = date("d-m-Y", $tomorrow_timestamp);
-				echo $tomorrow_date;
-				$_SESSION['ngaygiao']=$tomorrow_date;
+				$ngay_giao = strtotime("+ 4 day");
+				$ngay_gh = date("Y-m-d", $ngay_giao);
+				echo $ngay_gh;
+				$_SESSION['ngaygiao']=$ngay_gh;
 				?>
 				
 			</td>

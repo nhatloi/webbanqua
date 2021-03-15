@@ -130,7 +130,7 @@
 		
 		<?php
 			if($rowDH['hien_trang']==-1)
-				echo "<font color='#D14F10'>Đơn Đặt Này Đã Hủy!</font>({})";
+				echo "<font color='#D14F10'>Đơn Đặt Này Đã Hủy!</font> Với lý do:'{$rowDH['ghichu']}'";
 			if($rowDH['hien_trang']==0)
 			{
 				echo "<font color='#D14F10'>Đơn Đặt Hàng Này Chưa Giao!</font>";

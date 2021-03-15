@@ -94,6 +94,7 @@ if(isset($_POST['tquat']) && $_POST['tquat']=="tquat")
 					<a href="#" onclick="adm_chuyentrang('quanlyadmin')">Quản Lý Admin</a>
 					<a href="#" onclick="adm_chuyentrang('quanlytintuc')">Quản Lý Tin Tức</a>
 					<a href="#" onclick="adm_chuyentrang('quanlylienhe')">Quản Lý Liên Hệ</a>
+					<a href="#" onclick="adm_chuyentrang('quanlydoanhthu')">Quản Lý Doanh Thu</a>
 			</div>
 			<div style="width:200px; margin-top:10px; margin-bottom:10px; background:#FFFFFF; color:#009933; line-height:30px; 
 			border:#66A111 solid 1px; border-right:none; border-left:none;">
@@ -143,6 +144,8 @@ if(isset($_POST['tquat']) && $_POST['tquat']=="tquat")
 							include_once('admin/admin.php');
 						else if($hienthi=='quanlydondathang')
 							include_once('dondathang/dondathang.php');
+						else if($hienthi=='quanlydoanhthu')
+							include_once('baocaodoanhthu/doanhthu.php');
 							
 							/////////////////////////////////////////////////////////	
 						else if($hienthi=='xlloaiqua')

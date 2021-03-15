@@ -11,7 +11,13 @@
 	$dondathang=mysqli_query($conn,$strSQL);
 	//////////////////////////////////////////////////////////////
 ?>
-<table width="587" border="1" cellpadding="0" cellspacing="0">
+<div style="width:587px; margin-left:3px; margin-right:3px;">
+<table width="587" border="1" cellpadding="0" cellspacing="0" style="magin-left=10px">
+		<tr>
+			<td style="height:25px; background:url(images/trang.jpg) repeat-x;" align="center" class="ht" colspan="6">
+				Lịch sử mua hàng
+			</td>
+		</tr>
 	<tr>
 		<th width="40" align="center" style="border-left:#66A111 solid 1px;">
 			STT
@@ -83,6 +89,7 @@
 	</tr>
 		<?php } ?>
 </table>
+</div>
 <?php }} ?>
 <form name="chitietdon" action="" method="post">
 	<input type="hidden" name="view" value="lichsudonhang"/>

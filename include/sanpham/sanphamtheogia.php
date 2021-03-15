@@ -4,17 +4,6 @@
 	//bien dieu kien
 	$dieukien="";
 	//hien thi loai qua	
-	if(isset($_POST['MaLH']))
-	{
-	$ma=$_POST['MaLH'];
-		$dieukien="WHERE ma_loai ='{$ma}'";
-		
-		$strSQLH="SELECT * FROM loai_qua WHERE ma_loai={$ma}";
-		$hienthiloai=mysqli_query($conn,$strSQLH);
-		$rowH=@mysqli_fetch_array($hienthiloai);
-		$inloaiqua=$rowH['ten_loai'];
-	}
-	//hien thi theo gia
 	if(isset($_POST['gia']))
 	{
 		$gia=$_POST['gia'];
@@ -83,7 +72,7 @@
 			$tranghienhanh=$_POST['tranghienhanh'];
 		}
 	
-	$strSQL="SELECT * FROM qua {$dieukien} ORDER BY gia desc Limit {$dongbatdau},{$kichthuoctrang}";
+	$strSQL="SELECT * FROM qua {$dieukien} ORDER BY gia {$sort} Limit {$dongbatdau},{$kichthuoctrang}";
 	$qua=mysqli_query($conn,$strSQL);
 ?>
 <form name="hung1" method="post" action="">
