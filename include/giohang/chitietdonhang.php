@@ -125,7 +125,7 @@
 			if($rowDH['hien_trang']==1)
 				echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đã Giao Nhận!</b></font>";
 			if($rowDH['hien_trang']==-1)
-				echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đã Hủy!</b></font>";
+				echo "<font color='#D14F10'>Đơn Đặt Này Đã Hủy!</font> Với lý do:'{$rowDH['ghichu']}'";
 		?>
 		</center>
 		</td>
