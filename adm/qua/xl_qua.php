@@ -60,9 +60,9 @@ function them_qua()
 			return "Tên qua Đã Tồn Tại, Bạn Hãy Chọn Tên Khác";
 		//neu khong trconn ten luu vao csdl
 		
-		$strSQL="INSERT INTO qua(ten_qua,ma_loai,gia,mo_ta,hinh_anh,trang_thai) 
+		$strSQL2="INSERT INTO qua(ten_qua,ma_loai,gia,mo_ta,hinh_anh,trang_thai) 
 			VALUES ('{$tenqua}',{$loaiqua},'{$giaqua}','{$mota}','{$hinhanh}','{$trangthai}')";
-		mysqli_query($strSQL,$conn);
+		mysqli_query($conn,$strSQL2);
 			
 			return "Đã Thêm Thành Công qua Váo Cơ Sở Dữ Liệu";
 		
