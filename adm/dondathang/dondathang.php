@@ -105,9 +105,11 @@ $strSQL="SELECT count(*) FROM  dondathang {$dieukien}";
 		<td <?php echo $mausac; ?> >
 		<?php 
 			if($row['hien_trang']==0)
-				echo "<font color='#00BFFF'> Đang giao </font>";
+				echo "<font color='#00BFFF'> Đang xử lý </font>";
 			if($row['hien_trang']==1)
-				echo "<font color='#008000'> Đã Giao Hàng </font>";
+				echo "<font color='#FFFF99'> Đang Giao Hàng </font>";
+			if($row['hien_trang']==2)
+				echo "<font color='#00FF00'> Đã Giao Hàng </font>";
 			if($row['hien_trang']==-1)
 				echo "<font color='#fd0000'> Đơn hủy </font>";
 
