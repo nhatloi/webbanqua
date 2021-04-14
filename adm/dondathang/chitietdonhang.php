@@ -133,10 +133,10 @@
 				echo "<font color='#D14F10'>Đơn Đặt Này Đã Hủy!</font> Với lý do:'{$rowDH['ghichu']}'";
 			if($rowDH['hien_trang']==0)
 			{
-				echo "<font color='#D14F10'>Đơn Đặt Hàng Này Chưa Giao!</font>";
+				echo "<font color='#D14F10'>Đơn Đặt Hàng Này Đang xử lý!</font>";
 		?>
 		<br />
-		<a href="#" onclick="capnhatdonhang(1)">Xác nhận đã giao đơn hàng</a>
+		<a href="#" onclick="capnhatdonhang(1)">Xác nhận giao đơn hàng</a>
 		<br /><br />
 		<form name="capnhat" action="" method="post">
 			  <input type="hidden" name="madh" value="<?php echo $madon; ?>" />
@@ -147,11 +147,21 @@
 		<a href="#" onclick="capnhatdonhang(-1)">Hủy đơn hàng</a>
 		<br />
 		<?php }
-		if($rowDH['hien_trang']==1){ 
-			echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đã Giao Nhận!</b></font>";
+		if($rowDH['hien_trang']==1)
+		{
+			echo "<font color='#D14F10'>Đơn Đặt Hàng Này Đang Giao!</font>";
 		?>
 		<br />
-		<a href="#" onclick="xoa_dondathang('<?php echo $madon; ?>','xl_dondathang','xoadh')">Xóa Đơn Đặt Hàng Này</a>
+		<a href="#" onclick="capnhatdonhang(2)">Xác nhận đã giao đơn hàng</a>
+		<br /><br />
+		<form name="capnhat" action="" method="post">
+			<input type="hidden" name="madh" value="<?php echo $madon; ?>" />
+			<input type="hidden" name="trangchuyen" value="xl_dondathang" />
+			<input type="hidden" name="hientrang" value=""/>
+			<input type="text" name="ghichu" value="" placeholder="Lý do hủy đơn hàng?"/>
+		</form>
+		<a href="#" onclick="capnhatdonhang(-1)">Hủy đơn hàng</a>
+		<br />
 		<?php } ?>
 		</center>
 		</td>
