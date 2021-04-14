@@ -75,13 +75,13 @@
 		<td <?php echo $mausac; ?> >
 			<?php 
 			if($row['hien_trang']==0)
-				echo "<font color='#00BFFF'> Đang xử lý giao </font>";
+				echo "<font color='#0000FF'> Đang xử lý </font>";
 			if($row['hien_trang']==1)
-				echo "<font color='#008000'> Đang Giao Hàng </font>";
+				echo "<font color='#808000'> Đang Giao Hàng </font>";
+			if($row['hien_trang']==2)
+				echo "<font color='#666666'> Đã Giao Hàng </font>";
 			if($row['hien_trang']==-1)
 				echo "<font color='#fd0000'> Đơn hủy </font>";
-			if($row['hien_trang']==2)
-				echo "<font color='#008000'> Đã Giao </font>";
 
 			?>
 		</td>

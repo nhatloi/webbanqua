@@ -105,13 +105,14 @@ $strSQL="SELECT count(*) FROM  dondathang {$dieukien}";
 		<td <?php echo $mausac; ?> >
 		<?php 
 			if($row['hien_trang']==0)
-				echo "<font color='#00BFFF'> Đang xử lý </font>";
+				echo "<font color='#0000FF'> Đang xử lý </font>";
 			if($row['hien_trang']==1)
-				echo "<font color='#FFFF99'> Đang Giao Hàng </font>";
+				echo "<font color='#808000'> Đang Giao Hàng </font>";
 			if($row['hien_trang']==2)
-				echo "<font color='#00FF00'> Đã Giao Hàng </font>";
+				echo "<font color='#666666'> Đã Giao Hàng </font>";
 			if($row['hien_trang']==-1)
 				echo "<font color='#fd0000'> Đơn hủy </font>";
+				
 
 			?>
 		</td>
@@ -200,7 +201,7 @@ $strSQL="SELECT count(*) FROM  dondathang {$dieukien}";
 </script>
 <form name="giaonhan" action="" method="post">
 	<input type="hidden" name="trangchuyen" value="quanlydondathang" />
-	<input type="hidden" name="hientrang" value="0" />
+	<input type="hidden" name="hientrang" value="1" />
 </form>
 <script>
 	function timdon()

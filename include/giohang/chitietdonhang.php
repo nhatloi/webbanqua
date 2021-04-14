@@ -123,7 +123,7 @@
 			if($rowDH['hien_trang']==0)
 				echo "<font color='#D14F10'>Đơn Đặt Hàng Này Đang Xử lý!</font>";
 			if($rowDH['hien_trang']==1)
-				echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đang Giao Nhận!</b></font>";
+				echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đang Giao!</b></font>";
 			if($rowDH['hien_trang']==2)
 				echo "<font color='#D14F10'>Đơn Đặt Hàng Này <b>Đã Giao Nhận!</b></font>";
 			if($rowDH['hien_trang']==-1)
