@@ -61,7 +61,7 @@
 	<?php 
 		$i=0;
 		$tongdoanhthu=0;
-		$strSQL="SELECT * FROM dondathang Where hien_trang = 1 {$dieukien}";
+		$strSQL="SELECT * FROM dondathang Where hien_trang = 2 {$dieukien}";
 		$dondathang=mysqli_query($conn,$strSQL);
 		while($row=mysqli_fetch_array($dondathang))
 		{
@@ -126,7 +126,7 @@
     </tr>
 	<?php 
 		$i=0;
-		$strSQL="SELECT * FROM dondathang Where hien_trang = 1 {$dieukien}";
+		$strSQL="SELECT * FROM dondathang Where hien_trang = 2 {$dieukien}";
 		$dondathang=mysqli_query($conn,$strSQL);
 		$tongdoanhthu=0;
 		while($row=mysqli_fetch_array($dondathang))
