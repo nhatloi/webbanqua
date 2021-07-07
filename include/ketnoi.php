@@ -1,6 +1,6 @@
 <?php
 
-$hostName = 'MYSQL5047.site4now.nett';
+$hostName = 'MYSQL5047.site4now.net';
 // khai báo biến username
 $userName = 'a771dc_dtdm';
 //khai báo biến password
