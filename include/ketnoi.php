@@ -1,8 +1,8 @@
 <?php
 
-$hostName = 'MYSQL5047.site4now.net';
+$hostName = 'MYSQL5045.site4now.net';
 // khai báo biến username
-$userName = 'a771dc_dtdm';
+$userName = 'a771dc_dtdm2';
 //khai báo biến password
 $passWord = '1q2w3e4r';
 // khai báo biến databaseName
